@@ -1,0 +1,17 @@
+extends layout.pug 
+
+
+block content
+
+    .container 
+     
+    br
+    h2= jersey.Name 
+    h2= jersey.Number
+    h2= jersey.Size
+
+    if user
+     if user.id ==jersey.Authur 
+        a.btn.btn-default.bg-primary.text-light(href='/jersey/edit/'+jersey._id) Update Info Here 
+        a.btn.btn-danger.delete-jersey(href='#',data-id=jersey._id) Delete Info
+     

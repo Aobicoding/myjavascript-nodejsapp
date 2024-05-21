@@ -1,0 +1,28 @@
+extends layout.pug 
+
+
+block content
+
+
+
+ .container
+          != messages('message', locals)
+          br
+          h1 #{title}
+          form(method='POST', action='/jersey/add')
+             #form-group 
+                  label Name: 
+                  input.form-control(name='name', type='text')
+             #form-group 
+                  label Number: 
+                  input.form-control(name='number', type='text')
+                  
+             #form-group 
+                  label Size: 
+                  input.form-control(name='size', type='text') 
+                  br
+                  input.btn.btn-primary(type="submit", value="submit") 
+          
+
+
+

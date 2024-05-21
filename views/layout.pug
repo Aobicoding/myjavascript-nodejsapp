@@ -1,0 +1,43 @@
+doctype html 
+html
+  head
+    title  Knowledgebase 
+    link(rel='stylesheet' href='/bower_components/boostrap/dist/css/bootstrap.css')
+    link(rel="stylesheet", href='/bower_components/boostrap/dist/css/style.css')
+  body
+      nav.navbar.navbar-expand-lg.bg-primary
+       .container-fluid
+         a.navbar-brand.text-light(href='/') Jersey Info
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
+              span.navbar-toggler-icon
+              #navbarNavDropdown.collapse.navbar-collapse
+         ul.navbar-nav
+           li.nav-item
+            a.nav-link.active.text-light(aria-current='page' href='/') Home
+           if user
+            li.nav-item
+             a.nav-link.text-light(href='/add/jersey') Add  Info
+           if user 
+            li.nav-item  
+            a.nav-link.text-light(href='/logout') Logout 
+           else 
+            a.nav-link.text-light(href='/register') SignIn
+            li.nav-item
+            a.nav-link.text-light(href='/login') Login
+          
+          
+      .container
+        br
+        != messages('message', locals)     
+        block content 
+        br
+        br
+        br
+        br
+        hr
+        footer
+         p copyright &copy; 2023
+      
+      script(src="/bower_components/jquery/dist/jquery.js") 
+      script(src="/bower_components/boostrap/dist/js/bootstrap.js") 
+      script(src="/js/main.js") 

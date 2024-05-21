@@ -1,0 +1,16 @@
+extends layout  
+
+block content
+ h1 #{title}
+  br 
+  ul.list-group 
+   each jersey, i in jerseys
+    li.list-group-item 
+     a(href="/jersey/"+jersey._id)=   jersey
+       
+       
+   br
+ a.btn.btn-primary.text-light#btn(href="./add/jersey") Insert Jersey Info Here  
+        
+         
+  

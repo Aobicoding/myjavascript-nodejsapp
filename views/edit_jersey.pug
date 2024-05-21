@@ -1,0 +1,22 @@
+extends layout.pug 
+
+
+block content
+       
+          br
+          h1 #{title}
+          form(method='POST', action='/jersey/edit/'+jersey._id)
+             #form-group 
+                  label Name: 
+                  input.form-control(name='name', type='text', value= jersey.Name)
+             #form-group 
+                  label Number: 
+                  input.form-control(name='number', type='text', value= jersey.Number)
+                  
+             #form-group 
+                  label Size: 
+                  input.form-control(name='size', type='text', value= jersey.Size) 
+                  br
+                  input.btn.btn-primary(type="submit", value="submit") 
+
+          
